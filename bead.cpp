@@ -16,8 +16,7 @@
  * @bug
  */
  
-#include "Bead.hpp"
-#include "GlobalData.hpp"
+#include "bead.hpp"
 
 #include <vector>
 #include <ostream>
@@ -36,8 +35,8 @@ Bead::Bead() {
 	m_x = 0;
 	m_y = 0;
 	m_z = 0;
-	m_radius=1;
-	hasBeadCoord = false;
+	m_radius=15;
+	m_hasBeadCoord = false;
 }
 
 
@@ -47,12 +46,12 @@ Bead::Bead() {
  * @param x,y,z position parameters and radius
  */
 // ----------------------------------------------------------- 
-Bead::Bead(double Newx, double Newy, double Newz, double R_1N_eff) {
+Bead::Bead(double Newx, double Newy, double Newz) {
 	m_x = Newx;
 	m_y = Newy;
 	m_z = Newz;
-	m_radius=R_1N_eff;
-	hasBeadCoord = true;  
+	m_radius=15;
+	m_hasBeadCoord = true;  
 }
 
 // -----------------/*destructor */------------------- 
@@ -60,15 +59,34 @@ Bead::Bead(double Newx, double Newy, double Newz, double R_1N_eff) {
  * @brief Destructor : destruction of Bead;
  */
 Bead::~Bead() {
-	delete m_x;
-	delete m_x;
-	delete m_x;
-	delete m_radius;
-	delete m_hasBeadCoord;
 }
 
 
 
+// -------------------------/*get&set fn*/-------------------------
+/** set (: modification des parametres de O.)
+ * */
+void Bead::setCoord_Bead(double Newx, double Newy, double Newz) {
+	m_x = Newx;
+	m_y = Newy;
+	m_z = Newz;
+}
+
+double Bead::getRadius() const {
+	return this->m_radius;
+}
+
+double Bead::getX() const {
+	return this->m_x;
+}
+
+double Bead::getY() const {
+	return this->m_y;
+}
+
+double Bead::getZ() const {
+	return this->m_z;
+}
 
 
 

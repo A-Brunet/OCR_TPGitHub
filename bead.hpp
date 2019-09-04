@@ -19,8 +19,6 @@
 #ifndef BEAD_HPP
 #define BEAD_HPP
 
-#include "GlobalData.hpp"
-
 #include <string>
 #include <iostream>
 #include <math.h>
@@ -31,7 +29,14 @@ public:
 // ----------------------/*Constructor*/-----------------------
 	Bead();                       /**Default constructor*/
 	Bead(double, double, double); /**Spe constructor with argus*/
-	~Bead()
+	~Bead();
+
+	void setCoord_Bead(double Newx, double Newy, double Newz);
+	double getRadius() const;
+
+	double getX() const;
+	double getY() const;
+	double getZ() const;
 
 private:
 	double m_x;
@@ -39,6 +44,7 @@ private:
 	double m_z;
 	bool m_hasBeadCoord;
 	double m_radius;
-}
+
+}; /* class Bead */
 
 #endif
