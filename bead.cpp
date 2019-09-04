@@ -23,7 +23,7 @@
 #include <ostream>
 
 // ----------------------------------------------------------- 
-// ----------------------/*Constructor*/----------------------
+// ----------------------/*Constructor/Destructor*/----------------------
 // -----------------------------------------------------------	
 
 // -----------------/*constructor Default*/------------------- 
@@ -36,6 +36,41 @@ Bead::Bead() {
 	m_x = 0;
 	m_y = 0;
 	m_z = 0;
-	m_radius=GlobalData::R_1N_eff;
+	m_radius=1;
 	hasBeadCoord = false;
 }
+
+
+// ----------------/*constructor specific */------------------- 
+/**
+ * @brief Constructor(default) : built a 3D object bead 
+ * @param x,y,z position parameters and radius
+ */
+// ----------------------------------------------------------- 
+Bead::Bead(double Newx, double Newy, double Newz, double R_1N_eff) {
+	m_x = Newx;
+	m_y = Newy;
+	m_z = Newz;
+	m_radius=R_1N_eff;
+	hasBeadCoord = true;  
+}
+
+// -----------------/*destructor */------------------- 
+/**
+ * @brief Destructor : destruction of Bead;
+ */
+Bead::~Bead() {
+	delete m_x;
+	delete m_x;
+	delete m_x;
+	delete m_radius;
+	delete m_hasBeadCoord;
+}
+
+
+
+
+
+
+
+

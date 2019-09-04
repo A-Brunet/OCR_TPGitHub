@@ -30,7 +30,15 @@ class Bead {
 public:
 // ----------------------/*Constructor*/-----------------------
 	Bead();                       /**Default constructor*/
+	Bead(double, double, double); /**Spe constructor with argus*/
+	~Bead()
+
 private:
+	double m_x;
+	double m_y;
+	double m_z;
+	bool m_hasBeadCoord;
+	double m_radius;
 }
 
 #endif
